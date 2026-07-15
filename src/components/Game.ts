@@ -12,11 +12,12 @@ export class Game {
 
   handleInput() {}
 
-  update() {}
+  update() {
+    // console.log("updating...");
+  }
 
   render() {
-    console.log("here");
-    console.log(this.ctx);
+    // console.log("rendering...");
     this.ctx.fillRect(10, 10, 20, 20);
   }
 }
