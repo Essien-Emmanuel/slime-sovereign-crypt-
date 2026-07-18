@@ -1,4 +1,5 @@
-export declare const imagesToLoad: {
-    baseWorld: string;
-};
+export declare const ImageAssets: {
+    name: string;
+    src: string;
+}[];
 //# sourceMappingURL=resources.d.ts.map

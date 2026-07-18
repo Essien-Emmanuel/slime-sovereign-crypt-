@@ -7,23 +7,28 @@ export class ImageManager {
   }
 
   async register(metadata: AssetMetadata) {
-    const { name, src } = metadata;
+    try {
+      const { name, src } = metadata;
 
-    const img = new Image();
-    img.src = src;
+      const img = new Image();
+      img.src = src;
 
-    await img.decode();
+      await img.decode();
 
-    this.library[name] = {
-      name,
-      element: img,
-      isLoaded: true,
-    };
+      this.library[name] = {
+        name,
+        element: img,
+        isLoaded: true,
+      };
+      console.log(this.library);
 
-    console.log("last");
-
-    return img;
+      return img;
+    } catch (error) {
+      console.log("Image Loading Error: ", error);
+    }
   }
 
-  load(_name: string) {}
+  loadAssets(assets: AssetMetadata[]) {
+    assets.map(async (asset) => await this.register(asset));
+  }
 }

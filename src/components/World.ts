@@ -40,8 +40,7 @@ export class World {
   drawLayers() {}
 
   draw(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
-    const baseWorldTileImage = this.imageManager.library["baseWorldTile"];
-    console.log(baseWorldTileImage);
+    const baseWorldTileImage = this.imageManager.library["baseWorld"];
 
     if (baseWorldTileImage) {
       ctx.drawImage(

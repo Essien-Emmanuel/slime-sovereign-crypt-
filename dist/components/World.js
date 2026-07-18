@@ -21,8 +21,7 @@ export class World {
     }
     drawLayers() { }
     draw(canvas, ctx) {
-        const baseWorldTileImage = this.imageManager.library["baseWorldTile"];
-        console.log(baseWorldTileImage);
+        const baseWorldTileImage = this.imageManager.library["baseWorld"];
         if (baseWorldTileImage) {
             ctx.drawImage(baseWorldTileImage.element, 0, 0, canvas.width, canvas.height);
         }

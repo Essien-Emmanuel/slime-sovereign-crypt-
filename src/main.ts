@@ -5,15 +5,13 @@ import { ImageManager } from "./components/ImageManager";
 import { World } from "./components/World";
 import { GAME_BASE_TILE, GAME_COLS, GAME_ROWS } from "./constants";
 import { backgroundLayer } from "./layers";
+import { ImageAssets } from "./resources";
 
 // register assets
 const imageManager = new ImageManager();
 const baseWorldTile = "baseWorldTile";
 
-imageManager.register({
-  name: baseWorldTile,
-  src: "src/assets/base_world_tile.png",
-});
+imageManager.loadAssets(ImageAssets);
 
 // setup world
 const world = new World({
