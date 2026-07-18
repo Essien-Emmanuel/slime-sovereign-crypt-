@@ -1,10 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; 
+    overflow: hidden; 
+}
+
 canvas {
-    width: 800px;
-    height: 600px;
+    /* Maintain the internal 20:11 aspect ratio when scaling */
+    aspect-ratio: 20 / 11;
+    
+    /* Scale dynamically up to the screen edges without distorting */
+    width: 100vw;
+    height: auto;
+    max-height: 100vh;
+    max-width: 181.81vh; /* 20/11 equivalent to ensure it doesn't clip on ultra-wide screens */
+
     position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
+    
     border: 1px solid black;
     background-color: grey;
+    
+    /* Keep those beautiful LPC sprites crisp and sharp */
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 }

@@ -1,0 +1,1 @@
+{"version":3,"file":"ImageManager.d.ts","sourceRoot":"","sources":["../../src/components/ImageManager.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,iBAAiB,EAAE,aAAa,EAAE,MAAM,UAAU,CAAC;AAEjE,qBAAa,YAAY;IAChB,OAAO,EAAE,MAAM,CAAC,MAAM,EAAE,iBAAiB,CAAC,gBAAgB,CAAC,CAAC,CAAC;IACpE,cAEC;IAEK,QAAQ,CAAC,QAAQ,EAAE,aAAa,6BAiBrC;IAED,IAAI,CAAC,KAAK,EAAE,MAAM,QAAI;CACvB"}

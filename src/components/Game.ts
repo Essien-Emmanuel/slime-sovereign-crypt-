@@ -1,3 +1,4 @@
+import { GAME_HEIGHT, GAME_WIDTH } from "../constants";
 import type { Camera } from "./Camera";
 import type { World } from "./World";
 
@@ -16,11 +17,13 @@ export class Game {
     this.canvas = document.querySelector("canvas")!;
     this.ctx = this.canvas.getContext("2d")!;
 
+    this.ctx.imageSmoothingEnabled = false;
+
     this.world = config.world;
     this.camera = config.camera;
 
-    this.canvas.width = 300;
-    this.canvas.height = 200;
+    this.canvas.width = GAME_WIDTH;
+    this.canvas.height = GAME_HEIGHT;
   }
 
   handleInput() {}
@@ -31,7 +34,7 @@ export class Game {
 
   render() {
     // console.log("rendering...");
+    this.world.draw(this.canvas, this.ctx);
     this.world.drawGrid(this.ctx);
-    this.ctx.fillRect(10, 10, 20, 20);
   }
 }
