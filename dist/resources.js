@@ -1,6 +1,6 @@
 export const ImageAssets = [
     {
-        name: "baseWorld",
+        name: "background",
         src: "src/assets/base_world_tile.png",
     },
 ];

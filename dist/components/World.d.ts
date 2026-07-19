@@ -17,7 +17,8 @@ export declare class World {
     protected imageManager: WorldConfig["imageManager"];
     constructor(config: WorldConfig);
     drawGrid(ctx: CanvasRenderingContext2D): void;
-    drawLayers(): void;
+    getTile(layerArray: number[], row: number, col: number): number | undefined;
+    drawLayers(ctx: CanvasRenderingContext2D, layerName: string): void;
     draw(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D): void;
 }
 //# sourceMappingURL=World.d.ts.map

@@ -9,7 +9,6 @@ import { ImageAssets } from "./resources";
 
 // register assets
 const imageManager = new ImageManager();
-const baseWorldTile = "baseWorldTile";
 
 imageManager.loadAssets(ImageAssets);
 
@@ -18,7 +17,7 @@ const world = new World({
   cols: GAME_COLS,
   rows: GAME_ROWS,
   tileSize: GAME_BASE_TILE,
-  layers: [{ assetName: baseWorldTile, layerArray: backgroundLayer }],
+  layers: [{ assetName: "background", layerArray: backgroundLayer }],
   imageManager,
 });
 

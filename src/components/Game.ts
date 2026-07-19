@@ -34,7 +34,8 @@ export class Game {
 
   render() {
     // console.log("rendering...");
-    this.world.draw(this.canvas, this.ctx);
-    this.world.drawGrid(this.ctx);
+    // this.world.draw(this.canvas, this.ctx);
+    this.world.drawLayers(this.ctx, "background");
+    // this.world.drawGrid(this.ctx);
   }
 }

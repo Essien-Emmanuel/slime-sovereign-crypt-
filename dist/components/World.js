@@ -19,7 +19,32 @@ export class World {
             }
         }
     }
-    drawLayers() { }
+    getTile(layerArray, row, col) {
+        return layerArray[this.cols * row + col];
+    }
+    drawLayers(ctx, layerName) {
+        const imageAsset = this.imageManager.library[layerName];
+        if (!imageAsset)
+            return;
+        console.log("here");
+        const layer = this.layers.find((layer) => layer.assetName === layerName);
+        console.log("layer", layer);
+        if (!layer)
+            return;
+        const layerArray = layer.layerArray;
+        for (let row = 0; row < this.rows; row++) {
+            for (let col = 0; col < this.cols; col++) {
+                const tile = this.getTile(layerArray, row, col);
+                if (!tile)
+                    continue;
+                const sx = (tile * this.tileSize) % imageAsset.element.width;
+                const sy = Math.floor(tile / imageAsset.element.width) * this.tileSize;
+                const sw = this.tileSize;
+                const sh = this.tileSize;
+                ctx.drawImage(imageAsset.element, sx, sy, sw, sh, col * this.tileSize, row * this.tileSize, this.tileSize, this.tileSize);
+            }
+        }
+    }
     draw(canvas, ctx) {
         const baseWorldTileImage = this.imageManager.library["baseWorld"];
         if (baseWorldTileImage) {

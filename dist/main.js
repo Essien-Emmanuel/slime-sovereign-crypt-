@@ -8,14 +8,13 @@ import { backgroundLayer } from "./layers.js";
 import { ImageAssets } from "./resources.js";
 // register assets
 const imageManager = new ImageManager();
-const baseWorldTile = "baseWorldTile";
 imageManager.loadAssets(ImageAssets);
 // setup world
 const world = new World({
     cols: GAME_COLS,
     rows: GAME_ROWS,
     tileSize: GAME_BASE_TILE,
-    layers: [{ assetName: baseWorldTile, layerArray: backgroundLayer }],
+    layers: [{ assetName: "background", layerArray: backgroundLayer }],
     imageManager,
 });
 // setup camera
