@@ -14,7 +14,6 @@ export class ImageManager {
                 element: img,
                 isLoaded: true,
             };
-            console.log(this.library);
             return img;
         }
         catch (error) {

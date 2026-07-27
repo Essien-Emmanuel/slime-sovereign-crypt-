@@ -1,3 +1,4 @@
+import { GAME_HEIGHT, GAME_WIDTH } from "../constants";
 import type { ImageManager } from "./ImageManager";
 
 export type WorldConfig = {
@@ -14,17 +15,26 @@ export class World {
   protected rows: number;
   protected layers: WorldConfig["layers"];
   protected imageManager: WorldConfig["imageManager"];
+  protected isDebugCounted: boolean;
+  public width: number;
+  public height: number;
 
   constructor(config: WorldConfig) {
+    this.width = GAME_WIDTH;
+    this.height = GAME_HEIGHT;
     this.tileSize = config.tileSize;
     this.cols = config.cols;
     this.rows = config.rows;
     this.layers = config.layers;
     this.imageManager = config.imageManager;
+    this.isDebugCounted = false;
   }
 
   drawGrid(ctx: CanvasRenderingContext2D) {
     ctx.strokeStyle = "white";
+    let count = 1;
+
+    ctx.save();
     for (let row = 0; row < this.rows; row++) {
       for (let col = 0; col < this.cols; col++) {
         ctx.strokeRect(
@@ -33,6 +43,22 @@ export class World {
           this.tileSize,
           this.tileSize,
         );
+
+        this.isDebugCounted = count === this.cols * this.rows ? true : false;
+
+        // ctx.restore();
+        if (!this.isDebugCounted) {
+          ctx.font = "10px serif";
+          ctx.fillStyle = "black";
+          // ctx.fillText(
+          //   String(count),
+          //   this.tileSize * col,
+          //   this.tileSize * (row + 1),
+          // );
+          count++;
+        } else {
+          count = 1;
+        }
       }
     }
   }
@@ -44,10 +70,8 @@ export class World {
   drawLayers(ctx: CanvasRenderingContext2D, layerName: string) {
     const imageAsset = this.imageManager.library[layerName];
     if (!imageAsset) return;
-    console.log("here");
 
     const layer = this.layers.find((layer) => layer.assetName === layerName);
-    console.log("layer", layer);
     if (!layer) return;
 
     const layerArray = layer.layerArray;
@@ -55,10 +79,12 @@ export class World {
     for (let row = 0; row < this.rows; row++) {
       for (let col = 0; col < this.cols; col++) {
         const tile = this.getTile(layerArray, row, col);
-        if (!tile) continue;
+        if (typeof tile !== "number") continue;
 
-        const sx = (tile * this.tileSize) % imageAsset.element.width;
-        const sy = Math.floor(tile / imageAsset.element.width) * this.tileSize;
+        const ImageCols = imageAsset.element.width / this.tileSize;
+
+        const sx = ((tile - 1) * this.tileSize) % imageAsset.element.width;
+        const sy = Math.floor((tile - 1) / ImageCols) * this.tileSize;
         const sw = this.tileSize;
         const sh = this.tileSize;
 
@@ -78,7 +104,7 @@ export class World {
   }
 
   draw(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
-    const baseWorldTileImage = this.imageManager.library["baseWorld"];
+    const baseWorldTileImage = this.imageManager.library["background"];
 
     if (baseWorldTileImage) {
       ctx.drawImage(
