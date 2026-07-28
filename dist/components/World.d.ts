@@ -4,6 +4,7 @@ export type WorldConfig = {
     cols: number;
     tileSize: number;
     layers: {
+        layerName: string;
         assetName: string;
         layerArray: number[];
     }[];
@@ -21,7 +22,8 @@ export declare class World {
     constructor(config: WorldConfig);
     drawGrid(ctx: CanvasRenderingContext2D): void;
     getTile(layerArray: number[], row: number, col: number): number | undefined;
-    drawLayers(ctx: CanvasRenderingContext2D, layerName: string): void;
+    drawLayer(ctx: CanvasRenderingContext2D, layerName: string): void;
+    drawLayers(ctx: CanvasRenderingContext2D): void;
     draw(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D): void;
 }
 //# sourceMappingURL=World.d.ts.map

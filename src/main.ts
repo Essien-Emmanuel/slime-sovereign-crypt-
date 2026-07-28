@@ -4,7 +4,7 @@ import { GameEngine } from "./components/GameEngine";
 import { ImageManager } from "./components/ImageManager";
 import { World } from "./components/World";
 import { GAME_BASE_TILE, GAME_COLS, GAME_ROWS } from "./constants";
-import { backgroundLayer } from "./layers";
+import { floorLayer, wallLayer } from "./layers";
 import { ImageAssets } from "./resources";
 
 // register assets
@@ -17,7 +17,10 @@ const world = new World({
   cols: GAME_COLS,
   rows: GAME_ROWS,
   tileSize: GAME_BASE_TILE,
-  layers: [{ assetName: "background", layerArray: backgroundLayer }],
+  layers: [
+    { layerName: "floor", assetName: "background", layerArray: floorLayer },
+    { layerName: "wall", assetName: "background", layerArray: wallLayer },
+  ],
   imageManager,
 });
 

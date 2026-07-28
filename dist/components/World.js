@@ -46,12 +46,12 @@ export class World {
     getTile(layerArray, row, col) {
         return layerArray[this.cols * row + col];
     }
-    drawLayers(ctx, layerName) {
-        const imageAsset = this.imageManager.library[layerName];
-        if (!imageAsset)
-            return;
-        const layer = this.layers.find((layer) => layer.assetName === layerName);
+    drawLayer(ctx, layerName) {
+        const layer = this.layers.find((layer) => layer.layerName === layerName);
         if (!layer)
+            return;
+        const imageAsset = this.imageManager.library[layer.assetName];
+        if (!imageAsset)
             return;
         const layerArray = layer.layerArray;
         for (let row = 0; row < this.rows; row++) {
@@ -67,6 +67,10 @@ export class World {
                 ctx.drawImage(imageAsset.element, sx, sy, sw, sh, col * this.tileSize, row * this.tileSize, this.tileSize, this.tileSize);
             }
         }
+    }
+    drawLayers(ctx) {
+        this.drawLayer(ctx, "floor");
+        this.drawLayer(ctx, "wall");
     }
     draw(canvas, ctx) {
         const baseWorldTileImage = this.imageManager.library["background"];

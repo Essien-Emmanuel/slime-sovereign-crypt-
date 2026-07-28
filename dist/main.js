@@ -4,7 +4,7 @@ import { GameEngine } from "./components/GameEngine.js";
 import { ImageManager } from "./components/ImageManager.js";
 import { World } from "./components/World.js";
 import { GAME_BASE_TILE, GAME_COLS, GAME_ROWS } from "./constants.js";
-import { backgroundLayer } from "./layers.js";
+import { floorLayer, wallLayer } from "./layers.js";
 import { ImageAssets } from "./resources.js";
 // register assets
 const imageManager = new ImageManager();
@@ -14,7 +14,10 @@ const world = new World({
     cols: GAME_COLS,
     rows: GAME_ROWS,
     tileSize: GAME_BASE_TILE,
-    layers: [{ assetName: "background", layerArray: backgroundLayer }],
+    layers: [
+        { layerName: "floor", assetName: "background", layerArray: floorLayer },
+        { layerName: "wall", assetName: "background", layerArray: wallLayer },
+    ],
     imageManager,
 });
 // setup camera

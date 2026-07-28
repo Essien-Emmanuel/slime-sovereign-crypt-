@@ -5,7 +5,7 @@ export type WorldConfig = {
   rows: number;
   cols: number;
   tileSize: number;
-  layers: { assetName: string; layerArray: number[] }[];
+  layers: { layerName: string; assetName: string; layerArray: number[] }[];
   imageManager: ImageManager;
 };
 
@@ -67,12 +67,12 @@ export class World {
     return layerArray[this.cols * row + col];
   }
 
-  drawLayers(ctx: CanvasRenderingContext2D, layerName: string) {
-    const imageAsset = this.imageManager.library[layerName];
-    if (!imageAsset) return;
-
-    const layer = this.layers.find((layer) => layer.assetName === layerName);
+  drawLayer(ctx: CanvasRenderingContext2D, layerName: string) {
+    const layer = this.layers.find((layer) => layer.layerName === layerName);
     if (!layer) return;
+
+    const imageAsset = this.imageManager.library[layer.assetName];
+    if (!imageAsset) return;
 
     const layerArray = layer.layerArray;
 
@@ -101,6 +101,11 @@ export class World {
         );
       }
     }
+  }
+
+  drawLayers(ctx: CanvasRenderingContext2D) {
+    this.drawLayer(ctx, "floor");
+    this.drawLayer(ctx, "wall");
   }
 
   draw(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {

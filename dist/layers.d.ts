@@ -1,3 +1,3 @@
-export declare const backgroundLayerMain: number[];
-export declare const backgroundLayer: number[];
+export declare const wallLayer: number[];
+export declare const floorLayer: number[];
 //# sourceMappingURL=layers.d.ts.map

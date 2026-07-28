@@ -19,9 +19,9 @@ export class Game {
     }
     render() {
         this.ctx.clearRect(0, 0, this.world.width, this.world.height);
-        this.world.drawLayers(this.ctx, "background");
+        this.world.drawLayers(this.ctx);
         // this.world.draw(this.canvas, this.ctx);
-        this.world.drawGrid(this.ctx);
+        // this.world.drawGrid(this.ctx);
     }
 }
 //# sourceMappingURL=Game.js.map
