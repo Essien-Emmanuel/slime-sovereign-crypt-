@@ -21,7 +21,11 @@ export class ImageManager {
         }
     }
     loadAssets(assets) {
-        assets.map(async (asset) => await this.register(asset));
+        const assetPromises = assets.map((asset) => this.register(asset));
+        return Promise.all(assetPromises);
+    }
+    getAsset(srcName) {
+        return this.library[srcName];
     }
 }
 //# sourceMappingURL=ImageManager.js.map

@@ -23,7 +23,7 @@ export declare class World {
     drawGrid(ctx: CanvasRenderingContext2D): void;
     getTile(layerArray: number[], row: number, col: number): number | undefined;
     drawLayer(ctx: CanvasRenderingContext2D, layerName: string): void;
-    drawLayers(ctx: CanvasRenderingContext2D): void;
-    draw(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D): void;
+    draw(ctx: CanvasRenderingContext2D): void;
+    drawImage(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D): void;
 }
 //# sourceMappingURL=World.d.ts.map

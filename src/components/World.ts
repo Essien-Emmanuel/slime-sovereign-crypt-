@@ -103,12 +103,12 @@ export class World {
     }
   }
 
-  drawLayers(ctx: CanvasRenderingContext2D) {
+  draw(ctx: CanvasRenderingContext2D) {
     this.drawLayer(ctx, "floor");
     this.drawLayer(ctx, "wall");
   }
 
-  draw(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
+  drawImage(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
     const baseWorldTileImage = this.imageManager.library["background"];
 
     if (baseWorldTileImage) {

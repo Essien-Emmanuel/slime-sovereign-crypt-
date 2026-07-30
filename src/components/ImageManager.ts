@@ -28,6 +28,11 @@ export class ImageManager {
   }
 
   loadAssets(assets: AssetMetadata[]) {
-    assets.map(async (asset) => await this.register(asset));
+    const assetPromises = assets.map((asset) => this.register(asset));
+    return Promise.all(assetPromises);
+  }
+
+  getAsset(srcName: string) {
+    return this.library[srcName];
   }
 }

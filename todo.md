@@ -9,19 +9,28 @@ Combat: Simple bumper combat (walking into an enemy attacks them) or a basic spa
 Progression: Defeating enemies drops gold or small potions that restore health.
 
 
-[Milestone 1: The Canvas & The Tilemap] 
+[Milestone 1: The Canvas & Tilemap]
        │
        ▼
-[Milestone 2: The Animated Hero] 
+[Milestone 2: The Animated Hero]
        │
        ▼
-[Milestone 3: Collision Detection (Walls)] 
+[Milestone 2.5: 🎥 CAMERA SYSTEM] ◄── Add Camera HERE
        │
        ▼
-[Milestone 4: Spawning the Bad Guys (Enemies)] 
+[Milestone 3: Collision Detection (Walls)]
        │
        ▼
-[Milestone 5: Simple Combat & UI (Health Bars)] 
+[Milestone 4: Spawning Enemies & Basic AI]
        │
        ▼
-[Milestone 6: The Game Loop & Floor Progression]
+[Milestone 5: Simple Combat & UI]
+       │
+       ▼
+[Milestone 5.5: ✨ EFFECTS & ANIMATIONS] ◄── Add Visual Polish HERE
+       │
+       ▼
+[Milestone 6: Game Loop & Floor Progression]
+       │
+       ▼
+[Milestone 7: 🔊 SOUND & AUDIO MANAGER] ◄── Add Sound HERE

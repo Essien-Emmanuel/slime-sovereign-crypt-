@@ -1,0 +1,3 @@
+idle sprite
+- https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/#sex=male&body=Body_Color_amber&head=Human_Male_Small_amber&expression=Neutral_amber&shadow=Shadow_tan&hat=Hood_leather&facial_mask=Plain_Mask_black&wrists=Lace_Cuffs_leather&bauldron=Bauldron_leather&gloves=Gloves_steel&ring=Stud_Ring_leather&cape_trim=Cape_Trim_leather&sleeves=Original_Longsleeves_Overlay_black&jacket_trim=Frock_coat_buttons_bronze&jacket=Iverness_cloak_black&legs=Pantaloons_black&shoes=Rimmed_Boots_gray
+

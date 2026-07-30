@@ -1,1 +1,1 @@
-{"version":3,"file":"Player.d.ts","sourceRoot":"","sources":["../../src/components/Player.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,MAAM,iBAAiB,CAAC;AAE7C,qBAAa,MAAO,SAAQ,UAAU;CAAG"}
+{"version":3,"file":"Player.d.ts","sourceRoot":"","sources":["../../src/components/Player.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,gBAAgB,EAAE,MAAM,mBAAmB,CAAC;AAC1D,OAAO,EAAE,UAAU,EAAE,MAAM,iBAAiB,CAAC;AAG7C,qBAAa,MAAO,SAAQ,UAAU;IACpC,OAAO,CAAC,MAAM,CAAU;IACxB,YAAY,MAAM,EAAE,gBAAgB,EAGnC;IAED,MAAM,SAgCL;CACF"}

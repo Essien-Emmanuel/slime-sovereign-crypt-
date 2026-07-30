@@ -68,11 +68,11 @@ export class World {
             }
         }
     }
-    drawLayers(ctx) {
+    draw(ctx) {
         this.drawLayer(ctx, "floor");
         this.drawLayer(ctx, "wall");
     }
-    draw(canvas, ctx) {
+    drawImage(canvas, ctx) {
         const baseWorldTileImage = this.imageManager.library["background"];
         if (baseWorldTileImage) {
             ctx.drawImage(baseWorldTileImage.element, 0, 0, canvas.width, canvas.height);
