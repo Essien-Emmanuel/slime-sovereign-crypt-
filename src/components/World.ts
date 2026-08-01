@@ -10,7 +10,7 @@ export type WorldConfig = {
 };
 
 export class World {
-  protected tileSize: number;
+  public tileSize: number;
   protected cols: number;
   protected rows: number;
   protected layers: WorldConfig["layers"];

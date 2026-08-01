@@ -8,7 +8,10 @@ export declare class GameObject {
     protected width: number;
     protected height: number;
     protected visibility: boolean;
+    destinationPos: GameObjectPosition;
+    distanceToTravel: GameObjectPosition;
     constructor(config: GameObjectConfig);
+    moveTowards(destinationPos: GameObjectPosition, speed: number): number;
     draw(ctx: CanvasRenderingContext2D): void;
 }
 //# sourceMappingURL=GameObject.d.ts.map

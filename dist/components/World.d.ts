@@ -11,7 +11,7 @@ export type WorldConfig = {
     imageManager: ImageManager;
 };
 export declare class World {
-    protected tileSize: number;
+    tileSize: number;
     protected cols: number;
     protected rows: number;
     protected layers: WorldConfig["layers"];

@@ -39,7 +39,7 @@ export class Input {
         if (this.keys.indexOf(key) === -1) {
             this.keys.unshift(key);
         }
-        console.log(this.keys);
+        // console.log(this.keys);
     }
     keyrelease(key) {
         const index = this.keys.indexOf(key);
