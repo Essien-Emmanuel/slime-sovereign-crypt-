@@ -3,7 +3,6 @@ import { Game } from "./components/Game.js";
 import { GameEngine } from "./components/GameEngine.js";
 import { ImageManager } from "./components/ImageManager.js";
 import { Input } from "./components/Input.js";
-import { Player } from "./components/Player.js";
 import { World } from "./components/World.js";
 import { GAME_BASE_TILE, GAME_COLS, GAME_ROWS } from "./constants.js";
 import { floorLayer, wallLayer } from "./layers.js";

@@ -30,9 +30,10 @@ export class Game {
     render() {
         this.ctx.clearRect(0, 0, this.world.width, this.world.height);
         this.world.draw(this.ctx);
+        // this.world.drawGrid(this.ctx);
+        this.player.drawDestBox(this.ctx);
         this.player.draw(this.ctx);
         // this.world.drawImage(this.canvas, this.ctx);
-        // this.world.drawGrid(this.ctx);
     }
 }
 //# sourceMappingURL=Game.js.map

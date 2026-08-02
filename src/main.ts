@@ -1,10 +1,8 @@
 import { Camera } from "./components/Camera";
 import { Game } from "./components/Game";
 import { GameEngine } from "./components/GameEngine";
-import type { GameObject } from "./components/GameObject";
 import { ImageManager } from "./components/ImageManager";
 import { Input } from "./components/Input";
-import { Player } from "./components/Player";
 import { World } from "./components/World";
 import { GAME_BASE_TILE, GAME_COLS, GAME_ROWS } from "./constants";
 import { floorLayer, wallLayer } from "./layers";

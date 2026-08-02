@@ -7,7 +7,7 @@ export class Player extends GameObject {
     constructor(config) {
         super(config);
         this.moving = false;
-        this.speed = 1;
+        this.speed = 2;
     }
     update() {
         let nextX = this.destinationPos.x;

@@ -10,7 +10,7 @@ export class Player extends GameObject {
   constructor(config: GameObjectConfig) {
     super(config);
     this.moving = false;
-    this.speed = 1;
+    this.speed = 2;
   }
 
   update() {

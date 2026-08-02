@@ -6,12 +6,14 @@ export declare class GameObject {
     protected sprite: GameObjectSprite;
     protected scale: number;
     protected width: number;
+    protected halfWidth: number;
     protected height: number;
     protected visibility: boolean;
     destinationPos: GameObjectPosition;
     distanceToTravel: GameObjectPosition;
     constructor(config: GameObjectConfig);
     moveTowards(destinationPos: GameObjectPosition, speed: number): number;
+    drawDestBox(ctx: CanvasRenderingContext2D): void;
     draw(ctx: CanvasRenderingContext2D): void;
 }
 //# sourceMappingURL=GameObject.d.ts.map

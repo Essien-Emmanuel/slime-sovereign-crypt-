@@ -1,3 +1,4 @@
+import { GAME_BASE_HALF_TILE, GAME_BASE_TILE } from "../constants";
 import type {
   GameObjectConfig,
   GameObjectPosition,
@@ -11,6 +12,7 @@ export class GameObject {
   protected sprite: GameObjectSprite;
   protected scale: number;
   protected width: number;
+  protected halfWidth: number;
   protected height: number;
   protected visibility: boolean;
   public destinationPos: GameObjectPosition;
@@ -22,10 +24,13 @@ export class GameObject {
     this.game = game;
     this.position = position ?? { x: 0, y: 0 };
     this.sprite = sprite ?? {};
-    this.width = width;
-    this.height = height;
     this.scale = scale ?? 1;
     this.visibility = visibility ?? true;
+
+    this.width = width * this.scale;
+    this.height = height * this.scale;
+    this.halfWidth = this.width / 2;
+
     this.destinationPos = { x: this.position.x, y: this.position.y };
     this.distanceToTravel = { x: 0, y: 0 };
   }
@@ -47,12 +52,30 @@ export class GameObject {
       this.position.y += stepY * speed;
 
       this.distanceToTravel.x = this.destinationPos.x - this.position.x;
-      this.distanceToTravel.y = this.destinationPos.y - this.destinationPos.y;
+      this.distanceToTravel.y = this.destinationPos.y - this.position.y;
 
       distance = Math.hypot(this.distanceToTravel.x, this.distanceToTravel.y);
     }
 
     return distance;
+  }
+
+  drawDestBox(ctx: CanvasRenderingContext2D) {
+    ctx.strokeStyle = "white";
+    ctx.strokeRect(
+      this.position.x,
+      this.position.y,
+      GAME_BASE_TILE,
+      GAME_BASE_TILE,
+    );
+
+    ctx.strokeStyle = "blue";
+    ctx.strokeRect(
+      this.destinationPos.x,
+      this.destinationPos.y,
+      GAME_BASE_TILE,
+      GAME_BASE_TILE,
+    );
   }
 
   draw(ctx: CanvasRenderingContext2D) {
@@ -64,8 +87,8 @@ export class GameObject {
       this.sprite.y * this.sprite.h,
       this.sprite.w,
       this.sprite.h,
-      this.position.x,
-      this.position.y,
+      this.position.x - this.halfWidth + GAME_BASE_HALF_TILE,
+      this.position.y - this.height + GAME_BASE_TILE,
       this.width,
       this.height,
     );

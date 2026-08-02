@@ -31,7 +31,7 @@ export class World {
   }
 
   drawGrid(ctx: CanvasRenderingContext2D) {
-    ctx.strokeStyle = "white";
+    ctx.strokeStyle = "black";
     let count = 1;
 
     ctx.save();

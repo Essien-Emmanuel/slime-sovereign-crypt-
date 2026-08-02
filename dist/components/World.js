@@ -19,7 +19,7 @@ export class World {
         this.isDebugCounted = false;
     }
     drawGrid(ctx) {
-        ctx.strokeStyle = "white";
+        ctx.strokeStyle = "black";
         let count = 1;
         ctx.save();
         for (let row = 0; row < this.rows; row++) {
